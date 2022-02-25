@@ -9,6 +9,6 @@ export const patch: RequestHandler = async (request) => {
   const data = await request.request.formData();
   return api(request, {
     text: data.get("text") as string,
-    done: data.get("done") ? !!data.get("done") : undefined
+    done: !!data.get("done")
   });
 }
